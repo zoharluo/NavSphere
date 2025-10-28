@@ -8,7 +8,7 @@ import { Sidebar } from '@/components/sidebar'
 import { SearchBar } from '@/components/search-bar'
 import { ModeToggle } from '@/components/mode-toggle'
 import { Footer } from '@/components/footer'
-import { Github, HelpCircle, Puzzle } from 'lucide-react'
+import { Github, 设置, Puzzle } from 'lucide-react'
 import { Button } from "@/registry/new-york/ui/button"
 import Link from 'next/link'
 import { cn } from '@/lib/utils'
@@ -170,17 +170,17 @@ export function NavigationContent({ navigationData, siteData }: NavigationConten
                 </Button>
               </Link>
               <Link
-                href="https://mp.weixin.qq.com/s/90LUmKilfLZfc5L63Ej3Sg"
+                href="./admin"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="查看帮助文档"
+                aria-label="后台管理"
               >
                 <Button
                   variant="ghost"
                   size="icon"
                   className="hover:bg-accent hover:text-accent-foreground"
                 >
-                  <HelpCircle className="h-5 w-5" />
+                  <设置 className="h-5 w-5" />
                 </Button>
               </Link>
               <Button
