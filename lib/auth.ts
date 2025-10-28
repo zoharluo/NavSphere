@@ -38,6 +38,19 @@ const config = {
         session.user.accessToken = token.accessToken as string
       }
       return session
+    },
+    async signIn({ user, account, profile }) {
+      // 检查是否为管理员用户
+      const adminUsers = process.env.ADMIN_USER?.split(',') || []
+      const userLogin = user.email?.split('@')[0] || user.name || ''
+      
+      // 允许管理员用户登录
+      if (adminUsers.includes(userLogin)) {
+        return true
+      }
+      
+      // 拒绝非管理员用户
+      return false
     }
   },
   pages: {
