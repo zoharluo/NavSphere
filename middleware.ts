@@ -17,7 +17,7 @@ export async function middleware(request: NextRequest) {
     const adminUsers = process.env.ADMIN_USER?.split(',') || []
     const userLogin = session.user.email?.split('@')[0] || session.user.name || ''
     
-    if (!adminUsers。includes(userLogin)) {
+    if (!adminUsers.includes(userLogin)) {
       // 非管理员用户，重定向到错误页面
       return NextResponse.redirect(
         new URL('/auth/error?error=AccessDenied', request.url)
